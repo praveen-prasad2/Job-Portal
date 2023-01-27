@@ -1,3 +1,7 @@
+const UserModel=require("../Models/usermodel")
+
+
+
 const renderIndex=function(req, res, next) {
     res.render('index', { title: 'JOB PORTAL' });
   }
@@ -15,7 +19,15 @@ const signupPage=function (req,res,next){
     res.render('user/signup',{form:'enter username'})
 }
 
+const doSignup=async function(req,res,next){
+  try {
+    let  data = await UserModel.create(req.body)
+    res.send("Success")
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
 
-  module.exports={renderIndex,loginPage,homePage,signupPage}
+  module.exports={renderIndex,loginPage,homePage,signupPage,doSignup}

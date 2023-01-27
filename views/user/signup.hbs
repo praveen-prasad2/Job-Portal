@@ -1,1 +1,37 @@
-<h1>{{form}}</h1>
+<link rel="stylesheet" href="stylesheets/usersignup.css">
+
+<div class="container">
+
+<div class="content">
+    <h2>SIGNUP</h2>
+    
+    <form action="/signup" method="post">
+<label for="">FULL NAME:</label>
+<input type="text" name="fullName"><br><br>
+<label for="">E-MAIL:</label>
+<input type="email" name="eMail"><br><br>
+<label for="">PHONE NUMBER:</label>
+<input type="number" name="phoneNo"><br><br>
+<label for="">PASSWORD:</label>
+<input type="password" name="passWord"><br><br>
+
+<div class="form-check">
+    <label for="">WORK STATUS</label>
+  <input class="form-check-input" type="radio" name="workStatus" value="FRESHER" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    FRESHER
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="workStatus"  value="WORKING" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    WORKING
+  </label>
+</div>
+
+<button>SIGNUP</button>
+</div>
+</form>
+</div>
+
+    
