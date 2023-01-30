@@ -1,5 +1,5 @@
 const UserModel=require("../Models/usermodel")
-
+const bcrypt=require('bcrypt')
 
 
 const renderIndex=function(req, res, next) {
@@ -21,8 +21,9 @@ const signupPage=function (req,res,next){
 
 const doSignup=async function(req,res,next){
   try {
+    req.body.password=await bcrypt.hash(req.body.password,10)
     let  data = await UserModel.create(req.body)
-    res.send("Success")
+    res.redirect("/login")
   } catch (error) {
     console.log(error)
   }

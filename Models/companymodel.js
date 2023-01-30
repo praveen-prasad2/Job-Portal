@@ -1,6 +1,7 @@
-const { default: mongoose } = require("mongoose");
-const userSignupSchema = new mongoose.Schema({
-    fullName:{
+const {default:mongoose} = require('mongoose')
+
+const companySignupSchema=new mongoose.Schema({
+    empName:{
         type:String,
         maxLength:200,
         required:true
@@ -22,12 +23,13 @@ const userSignupSchema = new mongoose.Schema({
         minlength:8,
         required:true
     },
-    workStatus:{
+    companyType:{
         type:String,
         required:true
     }
-})
 
-const UserModel =mongoose.model('user',userSignupSchema)
+    })
 
-module.exports=UserModel
+    const companyModel=mongoose.model('company',companySignupSchema)
+
+    module.exports=companyModel
