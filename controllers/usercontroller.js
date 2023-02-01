@@ -18,7 +18,13 @@ const homePage = function (req, res, next) {
 }
 
 const signupPage = function (req, res, next) {
-  res.render('user/signup', { form: 'enter username' })
+  if(req.session.alertMsg){
+    let {alertMsg}=req.session
+ res.render('user/signup', {alertMsg})
+}else{
+  res.render('user/signup')
+}
+
 }
 
 const doSignup = async function (req, res, next) {
@@ -28,6 +34,8 @@ const doSignup = async function (req, res, next) {
     res.redirect("/login")
   } catch (error) {
     console.log(error)
+    req.session.alertMsg="signup failed retry"
+    res.redirect("/signup")
   }
 }
 
