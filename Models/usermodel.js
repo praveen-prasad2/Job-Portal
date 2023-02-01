@@ -1,5 +1,6 @@
 const { default: mongoose } = require("mongoose");
 const userSignupSchema = new mongoose.Schema({
+    
     fullName:{
         type:String,
         maxLength:200,
