@@ -1,21 +1,24 @@
 <link rel="stylesheet" href="stylesheets/login.css">
 
 
-<div class="center">
-    <h3>LOGIN</h3>
-    <form method="post" action="/login">
-        <div class="txt_field">
-            <input type="text" required name="eMail">
-            <label>Username</label>
-        </div>
-        <div class="txt_field">
-            <input type="password" required name="password">
-            <label>Password</label>
-        </div>
-        <div class="pass">Forgot password?</div>
-        <input type="submit" value="Login">
-        <div class="signup_link">
-        Not a member?<a href="">Register Now</a>
-        </div>
-    </form>
+<div class="container">
+  <div class="left">
+   
+    <div class="form">
+      <h2 class="animation a1">LOGIN</h2>
+        <form  method="post" action="/login">
+      <input type="email" class="form-field animation a3" placeholder="Email Address" name="eMail"><br>
+      <input type="password" class="form-field animation a4" placeholder="Password" name="password">
+      <p class="animation a5"><a href="#">Forgot Password</a></p>
+      <button>
+    Sign in
+    <div class="arrow-wrapper">
+        <div class="arrow"></div>
+
+    </div>
+</button>
+      </form>
+    </div>
+  </div>
+  <div class="right"></div>
 </div>
