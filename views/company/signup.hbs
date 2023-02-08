@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="stylesheets/usersignup.css">
-
+<link rel="stylesheet" href="/stylesheets/style.css">
+{{!-- 
 <div class="container">
 
 <div class="content">
@@ -26,4 +26,38 @@
 <button>SIGNUP</button>
 </div>
 </form>
+</div>
+ --}}
+
+
+
+<div class="container">
+  <div class="left">
+   
+    <div class="form">
+      <h2 class="animation a1">SIGNUP</h2>
+        <form  method="post" action="/company/signup">
+      <input type="text" class="form-field animation a3" placeholder="Employer Name" name="empName"><br>
+      <input type="email" class="form-field animation a3" placeholder="Email Address" name="eMail"><br>
+      <input type="number" class="form-field animation a3" placeholder="Phone Number" name="phoneNo"><br>
+      <input type="password" class="form-field animation a4" placeholder="Password" name="password"><br>
+<select name="companyType" class="form-select" aria-label="Default select example" >
+  <option selected>Select Company Type</option>
+  <option value="Software">Software</option>
+  <option value="Architecture">Architecture</option>
+  <option value="Finance">Finance</option>
+  <option value="Marketing">Marketing</option>
+</select>
+      <p class="animation a5">Already a Member?<a href="/company/signin">Signin Now</a></p>
+      <button>
+    Sign UP
+    <div class="arrow-wrapper">
+        <div class="arrow"></div>
+
+    </div>
+</button>
+      </form>
+    </div>
+  </div>
+  <div class="right"></div>
 </div>

@@ -26,7 +26,7 @@ const addJobSchema=new mongoose.Schema({
         maxLength:400,
         required:true
     },
-    eexperience:{
+    experience:{
         type:String,
         maxLength:400,
         required:true
@@ -59,7 +59,8 @@ const addJobSchema=new mongoose.Schema({
     status:{
         type:String,
         maxLength:400,
-        required:true
+        required:true,
+        default:"posted"
     },
 
 
