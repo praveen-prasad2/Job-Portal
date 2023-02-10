@@ -19,8 +19,19 @@ const addJob=async function(req,res,next){
     }
 }
 
-const companyJobView=(req,res,next) =>{
-    res.render("company/viewjobs")
+const companyJobView=async (req,res,next) =>{
+    if(req.session.company){
+    let jobs=await jobmodel.find({companyId:req.session.company._id})
+    res.render("company/viewjobs",{jobs})
+}else{
+    res.redirect('/company/login')
+}
+    
+}
+const userJobView=async (req,res,next)=>{
+        let jobs=await jobmodel.find({status:'posted'})
+        res.render('user/viewjobs',{jobs})
+ 
 }
 
-module.exports={jobPage,addJob,companyJobView}
+module.exports={jobPage,addJob,companyJobView,userJobView}

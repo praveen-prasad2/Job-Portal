@@ -1,5 +1,6 @@
 var express = require('express');
-const { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn } = require('../controllers/usercontroller');
+const { userJobView } = require('../controllers/jobcontroller');
+const { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn, updateProfile, doUpdate } = require('../controllers/usercontroller');
 var router = express.Router();
 
 /* GET home page. */
@@ -12,5 +13,14 @@ router.post('/signup',doSignup)
 
 router.get('/login',loginPage)
 router.post('/login',doLogIn)
+
+router.get('/viewjobs',userJobView)
+
+
+router.get('/updateprofile',updateProfile)
+
+router.post('/updateprofile',doUpdate)
+
+
 
 module.exports = router;

@@ -1,0 +1,35 @@
+
+
+
+
+
+<form action="/updateprofile" method="post" enctype="multipart/form-data">
+
+    <textarea name="about" class="about" cols="30" rows="10" spaceholder="About" ></textarea> <br><br>
+    <textarea name="qualification" class="qualification" cols="30" rows="10" spaceholder="Qualification"></textarea><br><br>
+    <textarea name="skills" class="skills" cols="30" rows="10" spaceholder="Skills"></textarea><br><br>
+    <textarea name="experience" class="experience" cols="30" rows="10" spaceholder="Experience"></textarea><br><br>
+
+    <input type="file" name="image" id="image" accept=".jpg"><br><br>
+    <input type="file" name="resume" id="resume"  accept=".pdf"><br><br>
+
+    <select name="jobCategory" class="form-select" aria-label="Default select example" ><br><br>
+  <option selected>Job Category</option>
+  <option value="Software">Software</option>
+  <option value="Architecture">Architecture</option>
+  <option value="Finance">Finance</option>
+  <option value="Marketing">Marketing</option>
+</select><br><br>
+
+<select name="languages" class="form-select" aria-label="Default select example" >
+  <option selected>Languages</option>
+  <option value="English">English</option>
+  <option value="Malayalam">Malayalam</option>
+  <option value="Hindi">Hindi</option>
+</select><br><br>
+
+<button class="save">Save</button>
+
+
+
+</form>

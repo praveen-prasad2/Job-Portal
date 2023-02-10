@@ -26,6 +26,28 @@ const userSignupSchema = new mongoose.Schema({
     workStatus:{
         type:String,
         required:true
+    },
+    about:{
+        type:String
+    },
+    qualification:{
+        type:String
+    },
+    skills:{
+        type:String
+    },
+    experience:{
+        type:String
+    },
+    jobCategory:{
+        type:String
+    },
+    languages:{
+        type:String
+    },
+    updated:{
+        type:Boolean,
+        default:false
     }
 })
 

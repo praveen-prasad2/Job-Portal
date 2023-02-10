@@ -62,7 +62,19 @@ const doLogIn = async function (req, res, next) {
   }
 }
 
+const updateProfile= function(req,res,next){
+  res.render('user/updateprofile')
+}
+
+const doUpdate=async function(req,res,next){
+  if(req.session.user){
+    await UserModel.findOneAndUpdate({eMail:req.session.user.eMail},req.body)
+  }else{
+    res.redirect('/login')
+  }
+}
 
 
 
-module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn }
+
+module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn,updateProfile,doUpdate }

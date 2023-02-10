@@ -4,6 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
+var fileUpload=require('express-fileupload')
+
+
+
+
+
 
 
 const connectDb = require("./config")
@@ -25,6 +31,7 @@ app.use(session({
   cookie: {  maxAge:3*60*60*1000}
 }))
 
+app.use(fileUpload())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
