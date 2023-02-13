@@ -69,10 +69,14 @@ const updateProfile= function(req,res,next){
 const doUpdate=async function(req,res,next){
   if(req.session.user){
     await UserModel.findOneAndUpdate({eMail:req.session.user.eMail},req.body)
+    await req.files.image.mv(`./public/user/${req.session.user._id}.jpg`)
+    await req.files.resume.mv(`./public/resume/${req.session.user._id}.pdf`)
   }else{
     res.redirect('/login')
   }
 }
+
+
 
 
 
