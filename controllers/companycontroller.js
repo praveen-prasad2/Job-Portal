@@ -42,4 +42,17 @@ const doLogin=async function(req,res,next){
     }
 }
 
-module.exports={signupPage,doSignup,loginPage,doLogin,homePage}
+
+const updateProfile=function(req,res,next){
+    res.render('company/updateprofile')
+}
+
+const doUpdate=async function(req,res,next){
+    if(req.session.company){
+        await companyModel.findOneAndUpdate({eMail:req.session.company.eMail},req.body)
+    }else{
+        res.redirect('/company/login')
+    }
+}
+
+module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate}

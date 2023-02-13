@@ -26,7 +26,24 @@ const companySignupSchema=new mongoose.Schema({
     companyType:{
         type:String,
         required:true
+    },
+    about:{
+        type:String
+    },
+    address:{
+        type:String
+    },
+    mission:{
+        type:String,
+    },
+    vision:{
+        type:String
+    },
+    updated:{
+        type:Boolean,
+        default:false
     }
+
 
     })
 
