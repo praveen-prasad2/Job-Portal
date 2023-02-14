@@ -50,6 +50,8 @@ const updateProfile=function(req,res,next){
 const doUpdate=async function(req,res,next){
     if(req.session.company){
         await companyModel.findOneAndUpdate({eMail:req.session.company.eMail},req.body)
+    await req.files.companyimage.mv(`./public/company/${req.session.company._id}.jpg`)
+        
     }else{
         res.redirect('/company/login')
     }

@@ -67,13 +67,16 @@ const updateProfile= function(req,res,next){
 }
 
 const doUpdate=async function(req,res,next){
-  if(req.session.user){
     await UserModel.findOneAndUpdate({eMail:req.session.user.eMail},req.body)
     await req.files.image.mv(`./public/user/${req.session.user._id}.jpg`)
     await req.files.resume.mv(`./public/resume/${req.session.user._id}.pdf`)
-  }else{
-    res.redirect('/login')
-  }
+  
+}
+
+
+const viewProfile=async function(req,res,next){
+    let profile=await UserModel.findOne({eMail:req.session.user.eMail})
+    res.render('user/viewprofile',{profile})
 }
 
 
@@ -81,4 +84,4 @@ const doUpdate=async function(req,res,next){
 
 
 
-module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn,updateProfile,doUpdate }
+module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn,updateProfile,doUpdate,viewProfile }
