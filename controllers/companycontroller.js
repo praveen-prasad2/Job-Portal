@@ -49,12 +49,24 @@ const updateProfile=function(req,res,next){
 
 const doUpdate=async function(req,res,next){
     if(req.session.company){
-        await companyModel.findOneAndUpdate({eMail:req.session.company.eMail},req.body)
+   let updatedCompany=     await companyModel.findOneAndUpdate({eMail:req.session.company.eMail},req.body,{new:true})
     await req.files.companyimage.mv(`./public/company/${req.session.company._id}.jpg`)
+    req.session.company=updatedCompany
+    res.redirect('/company/viewprofile')
+
         
     }else{
         res.redirect('/company/login')
+
     }
+
 }
 
-module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate}
+const viewcmpProfile=async function(req,res,next){
+    let profile=await companyModel.findOne ({eMail:req.session.company.eMail})
+    res.render('company/viewprofile',{profile})
+}
+
+
+
+module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate,viewcmpProfile}
