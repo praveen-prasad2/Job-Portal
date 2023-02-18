@@ -33,5 +33,5 @@ const userJobView=async (req,res,next)=>{
         res.render('user/viewjobs',{jobs})
  
 }
-
+   
 module.exports={jobPage,addJob,companyJobView,userJobView}

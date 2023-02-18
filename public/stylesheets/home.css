@@ -1,6 +1,6 @@
 .wrapper{
     width: 100%;
-    
+    z-index: 10  ;
     position: fixed;
 }
 
@@ -55,3 +55,6 @@ nav #toggle:checked ~ .menu{
     height: 100%;
 }
 }
+
+
+

@@ -18,10 +18,12 @@ router.post('/login',doLogIn)
 router.get('/viewjobs',userJobView)
 
 
-router.get('/updateprofile',updateProfile)
+router.get('/updateprofile',userOnly, updateProfile)
 router.post('/updateprofile',userOnly,doUpdate)
 
 router.get('/viewprofile',userOnly,viewProfile)
+
+router.get('')
 
 
 
