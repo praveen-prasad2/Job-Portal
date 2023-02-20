@@ -1,5 +1,8 @@
 const UserModel = require("../Models/usermodel")
-const bcrypt = require('bcrypt')
+const jobApplicationModel=require('../Models/jobapplicationmodel')
+const bcrypt = require('bcrypt');
+const jobmodel = require("../Models/jobmodel");
+const jobapplicationmodel = require("../Models/jobapplicationmodel");
 
 
 const renderIndex = function (req, res, next) {
@@ -83,8 +86,30 @@ const viewProfile=async function(req,res,next){
 }
 
 
+const applyJob=async function(req,res,next){
+  const job =await jobmodel.findOne({_id:req.params.id})
+  let body={
+    userId:req.session.user._id,
+    userName:req.session.user.fullName,
+    jobId:job._id,
+    jobTitle:job.title,
+    companyId:job.companyId,
+    companyName:job.companyName,
+    appliedDate:new Date().toDateString()
+  }
+  console.log(body)
+  let application=await jobApplicationModel.create(body)
+  res.redirect('/home')
+ 
+}
+
+const viewApplications=async function(req,res,next){
+  const jobapplication=await jobapplicationmodel.find({userID:req.session.user._Id})
+  console.log(jobapplication)
+  res.render("user/viewapplications",{jobapplication})
+}
 
 
 
 
-module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn,updateProfile,doUpdate,viewProfile }
+module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn,updateProfile,doUpdate,viewProfile,applyJob,viewApplications }
