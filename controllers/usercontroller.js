@@ -104,7 +104,7 @@ const applyJob=async function(req,res,next){
 }
 
 const viewApplications=async function(req,res,next){
-  const jobapplication=await jobapplicationmodel.find({userID:req.session.user._Id})
+  const jobapplication=await jobapplicationmodel.find({userId:req.session.user._id})
   console.log(jobapplication)
   res.render("user/viewapplications",{jobapplication})
 }
