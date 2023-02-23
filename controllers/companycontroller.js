@@ -72,6 +72,10 @@ const viewcmpProfile=async function(req,res,next){
 const userApplications=async function(req,res,next){
     const applications=await jobapplicationmodel.find({companyId:req.session.company._id})
     console.log(applications);
+    let appliedjobs=applications.filter((x)=>x.status=="applied")
+    let acceptedjobs=applications.filter((x)=>x.status=="accepted")
+    let rejectedjobs=applications.filter((x)=>x.status=="rejected")
+    console.log(acceptedjobs)
     res.render('company/userapplications',{applications})
 }
 
