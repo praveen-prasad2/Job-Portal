@@ -1,5 +1,5 @@
 var express = require('express');
-const { doSignup, signupPage, loginPage, doLogin ,homePage, updateProfile, doUpdate, viewcmpProfile} = require('../controllers/companycontroller');
+const { doSignup, signupPage, loginPage, doLogin ,homePage, updateProfile, doUpdate, viewcmpProfile, userApplications, userProfile, acceptprofile, rejectprofile} = require('../controllers/companycontroller');
 const { jobPage, addJob, companyJobView } = require('../controllers/jobcontroller');
 const companyOnly = require('../middlewares/companyonly');
 var router = express.Router();
@@ -21,5 +21,10 @@ router.post('/updateprofile',doUpdate)
 
 router.get('/viewprofile',companyOnly,viewcmpProfile)
 
+router.get('/userapplications',companyOnly, userApplications)
+
+
+router.get('/acceptprofile/:id', companyOnly, acceptprofile )
+router.get('/rejectprofile/:id', companyOnly, rejectprofile)
 
 module.exports = router;

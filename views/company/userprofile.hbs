@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/stylesheets/userprofile.css">
+
+
+<div class="container">
+
+        <div class="card">
+        <div class="card-border-top">
+            </div>
+            <div class="img">
+                
+                <img class="image" src="/user/{{profiles._id}}.jpg" alt="">
+            </div>
+        <div class="content">
+            <p>{{profiles.userName}}</p>
+            <p>{{profiles.eMail}}</p>
+            <p>{{profiles.phoneNo}}</p>
+            <p>{{profiles.workStatus}}</p>
+            <p>{{profiles.about}}</p>
+            <p>{{profiles.qualification}}</p>
+            <p>{{profiles.skills}}</p>
+            <p>{{profiles.experience}}</p>
+            <p>{{profiles.jobCategory}}</p>
+            <p>{{profiles.languages}}</p>
+        </div>
+           <ul class="wrapper">
+    <li class="icon facebook">
+        <a href="/resume/{{profiles._id}}.pdf">
+        <span class="tooltip">Resume</span>
+        <span><i class="fa-solid fa-user"></i></i></span></a>
+    </li>
+    <li class="icon twitter">
+        <a href="">
+        <span class="tooltip">Accept</span>
+        <span><i class="fa-solid fa-check"></i></span></a>
+    </li>
+    <li class="icon twitter">
+        <span class="tooltip">Reject</span>
+        <span><i class="fa-solid fa-trash"></i></span>
+    </li>
+        </div>
+</div>

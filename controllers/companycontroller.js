@@ -1,5 +1,7 @@
 const companyModel=require("../Models/companymodel")
 const bcrypt=require('bcrypt')
+const jobapplicationmodel = require("../Models/jobapplicationmodel")
+const UserModel = require("../Models/usermodel")
 
 
 const homePage=function(req,res,next){
@@ -67,6 +69,26 @@ const viewcmpProfile=async function(req,res,next){
     res.render('company/viewprofile',{profile})
 }
 
+const userApplications=async function(req,res,next){
+    const applications=await jobapplicationmodel.find({companyId:req.session.company._id})
+    console.log(applications);
+    res.render('company/userapplications',{applications})
+}
+
+const userProfile=async function(req,res,next){
+    const profiles=await UserModel.findOne({_id:req.params.id})
+    res.render('company/userprofile',{profiles})
+}
+
+const acceptprofile = async function (req, res, next) {
+    const accept = await jobapplicationmodel.findOneAndUpdate({ _id: req.params.id }, { status: "accepted" })
+    console.log(accept);
+    res.redirect('/company/userapplications')
+}
+const rejectprofile = async function (req, res, next) {
+    const reject = await jobapplicationmodel.findOneAndUpdate({ _id: req.params.id }, { status: "rejected" })
+    res.redirect('/company/userapplications')
+}
 
 
-module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate,viewcmpProfile}
+module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate,viewcmpProfile,userApplications,userProfile,acceptprofile,rejectprofile}

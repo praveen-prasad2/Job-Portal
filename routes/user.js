@@ -27,4 +27,5 @@ router.get('/applyjob/:id',userOnly, applyJob)
 router.get('/viewapplications',userOnly,viewApplications)
 
 
+
 module.exports = router;
