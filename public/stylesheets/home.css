@@ -58,5 +58,10 @@ nav #toggle:checked ~ .menu{
 }
 }
 
+.profile{
+    color: white;
+    font-size: 25px;
+}
+
 
 
