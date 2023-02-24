@@ -1,10 +1,22 @@
+<link rel="stylesheet" href="/stylesheets/home.css">
 
 
-<h1>Welcome {{company.empName}}</h1>
+<div class="wrapper">
+    <nav>
+        <a href="#" class="logo"><p>{{company.companyName}}</p></a>
+        <input type="checkbox" name="" id="toggle">
+        <label for="toggle"><i class="fa-sharp fa-solid fa-bars">Menu</i></label>
+        <div class="menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="/viewjobs">JOBS</a></li>
+                <li><a href="/updateprofile">ADD JOB</a></li>
+                <li><a href="/updateprofile">VIEW APPLICATIONS</a></li>
+                <li class="profile"><a href="/viewprofile">PROFILE</a></li>
+                <li><a href="/updateprofile">UPDATE PROFILE</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
 
-
-
-
-
-<a href="/company/addjob">Add Job</a>

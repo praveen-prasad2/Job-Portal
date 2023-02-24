@@ -76,7 +76,9 @@ const userApplications=async function(req,res,next){
     let acceptedjobs=applications.filter((x)=>x.status=="accepted")
     let rejectedjobs=applications.filter((x)=>x.status=="rejected")
     console.log(acceptedjobs)
-    res.render('company/userapplications',{applications})
+    console.log(appliedjobs)
+    console.log(rejectedjobs)
+    res.render('company/userapplications',{applications,appliedjobs,acceptedjobs,rejectedjobs})
 }
 
 const userProfile=async function(req,res,next){

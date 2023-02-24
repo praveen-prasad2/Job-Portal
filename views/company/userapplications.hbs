@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="/stylesheets/viewjob.css">
+<link rel="stylesheet" href="/stylesheets/userapplication.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="main">
+<h1>New applications</h1>
 
-<h1>New applicationsq</h1>
-
-{{#each applications}}
+{{#each appliedjobs}}
 
 
 <article class="card">
@@ -33,3 +34,70 @@
 </article>
 
 {{/each}}
+
+<h1>Accepted Jobs</h1>
+
+{{#each acceptedjobs}}
+
+
+<article class="card">
+   
+<div class="card_content">
+        <span class="card_subtitle">{{userName}}</span><br>
+        <span class="card_subtitle">{{jobTitle}}</span><br>
+        <span class="card_subtitle">{{appliedDate}}</span><br>
+        <span class="card_subtitle">{{status}}</span><br>
+        
+    
+<ul class="wrapper">
+    <li class="icon facebook">
+        <span class="tooltip">User profile</span>
+        <a href="/company/userprofile/{{userId}}"><span><i class="fa-solid fa-user"></i></i></span></a>
+    </li>
+    <li class="icon twitter">
+        <span class="tooltip">Accept</span>
+    <a href="/company/acceptprofile/{{_id}}">   <span><i class="fa-solid fa-check"></i></span></a> 
+    </li>
+    <li class="icon twitter">
+        <span class="tooltip">Reject</span>
+   <a href="/company/rejectprofile/{{_id}}">    <span><i class="fa-solid fa-trash"></i></span></a> 
+    </li>
+  
+</div>
+</article>
+
+{{/each}}
+
+<h1>Rejected Jobs</h1>
+
+{{#each rejectedjobs}}
+
+
+<article class="card">
+   
+<div class="card_content">
+        <span class="card_subtitle">{{userName}}</span><br>
+        <span class="card_subtitle">{{jobTitle}}</span><br>
+        <span class="card_subtitle">{{appliedDate}}</span><br>
+        <span class="card_subtitle">{{status}}</span><br>
+        
+    
+<ul class="wrapper">
+    <li class="icon facebook">
+        <span class="tooltip">User profile</span>
+        <a href="/company/userprofile/{{userId}}"><span><i class="fa-solid fa-user"></i></i></span></a>
+    </li>
+    <li class="icon twitter">
+        <span class="tooltip">Accept</span>
+    <a href="/company/acceptprofile/{{_id}}">   <span><i class="fa-solid fa-check"></i></span></a> 
+    </li>
+    <li class="icon twitter">
+        <span class="tooltip">Reject</span>
+   <a href="/company/rejectprofile/{{_id}}">    <span><i class="fa-solid fa-trash"></i></span></a> 
+    </li>
+  
+</div>
+</article>
+
+{{/each}}
+</div>
