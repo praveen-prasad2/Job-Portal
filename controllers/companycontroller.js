@@ -44,6 +44,11 @@ const doLogin=async function(req,res,next){
     }
 }
 
+const doLogout=async function(req,res,next){
+    delete req.session.company
+    res.redirect('/company/login')
+}
+
 
 const updateProfile=function(req,res,next){
     res.render('company/updateprofile')
@@ -97,4 +102,4 @@ const rejectprofile = async function (req, res, next) {
 }
 
 
-module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate,viewcmpProfile,userApplications,userProfile,acceptprofile,rejectprofile}
+module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate,viewcmpProfile,userApplications,userProfile,acceptprofile,rejectprofile,doLogout}

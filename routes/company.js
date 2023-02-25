@@ -1,5 +1,5 @@
 var express = require('express');
-const { doSignup, signupPage, loginPage, doLogin ,homePage, updateProfile, doUpdate, viewcmpProfile, userApplications, userProfile, acceptprofile, rejectprofile} = require('../controllers/companycontroller');
+const { doSignup, signupPage, loginPage, doLogin ,homePage, updateProfile, doUpdate, viewcmpProfile, userApplications, userProfile, acceptprofile, rejectprofile, doLogout} = require('../controllers/companycontroller');
 const { jobPage, addJob, companyJobView } = require('../controllers/jobcontroller');
 const companyOnly = require('../middlewares/companyonly');
 var router = express.Router();
@@ -11,6 +11,8 @@ router.get('/home',homePage)
 
 router.get('/login',loginPage)
 router.post('/login',doLogin)
+
+router.post('/logout',doLogout)
 
 router.get('/addjob',jobPage) 
 router.post('/addjob',addJob)
