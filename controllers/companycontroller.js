@@ -45,7 +45,7 @@ const doLogin=async function(req,res,next){
 }
 
 const doLogout=async function(req,res,next){
-    delete req.session.company
+   delete  req.session.company 
     res.redirect('/company/login')
 }
 
@@ -100,6 +100,8 @@ const rejectprofile = async function (req, res, next) {
     const reject = await jobapplicationmodel.findOneAndUpdate({ _id: req.params.id }, { status: "rejected" })
     res.redirect('/company/userapplications')
 }
+
+
 
 
 module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate,viewcmpProfile,userApplications,userProfile,acceptprofile,rejectprofile,doLogout}

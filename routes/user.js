@@ -1,6 +1,7 @@
+const { Router } = require('express');
 var express = require('express');
 const { userJobView } = require('../controllers/jobcontroller');
-const { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn, updateProfile, doUpdate, viewProfile, applyJob, viewApplications } = require('../controllers/usercontroller');
+const { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn, updateProfile, doUpdate, viewProfile, applyJob, viewApplications, doLogOut } = require('../controllers/usercontroller');
 var router = express.Router();
 const userOnly=require('../middlewares/useronly')
 
@@ -20,6 +21,8 @@ router.get('/viewjobs',userJobView)
 
 router.get('/updateprofile',userOnly, updateProfile)
 router.post('/updateprofile',userOnly,doUpdate)
+
+router.get('/logout',doLogOut)
 
 router.get('/viewprofile',userOnly,viewProfile)
 

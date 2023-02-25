@@ -65,6 +65,12 @@ const doLogIn = async function (req, res, next) {
   }
 }
 
+const doLogOut=async function(req,res,next){
+  delete req.session.user
+  res.redirect('/login')
+}
+
+
 const updateProfile= function(req,res,next){
   res.render('user/updateprofile')
 }
@@ -112,4 +118,4 @@ const viewApplications=async function(req,res,next){
 
 
 
-module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn,updateProfile,doUpdate,viewProfile,applyJob,viewApplications }
+module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn,updateProfile,doUpdate,viewProfile,applyJob,viewApplications,doLogOut }
