@@ -51,7 +51,7 @@ const jobEditPage =async  function (req, res, next) {
 
 const editJob = async function (req, res, next) {
     const jobEdit = await jobmodel.findOneAndUpdate({ _id: req.params.id }, req.body)
-    res.redirect('/company/viewjobs',{jobEdit})
+    res.redirect('/company/viewjobs')
 }
 
 module.exports = { jobPage, addJob, companyJobView, userJobView, deleteJob, jobEditPage, editJob }

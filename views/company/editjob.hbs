@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="form">
-        <form action="/company/addjob" method="post">
+        <form action="/company/editjob/{{job._id}}" method="post">
             <input type="text" name="title" placeholder="Title" value="{{job.title}}"><br><br>
             <textarea name="description" id="" cols="30" rows="10"
                 spaceholder="Description">{{job.description}}</textarea><br><br>
