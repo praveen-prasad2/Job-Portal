@@ -101,7 +101,16 @@ const rejectprofile = async function (req, res, next) {
     res.redirect('/company/userapplications')
 }
 
+const editCmpprofile=async function(req,res,next){
+    const profilecmp=await companyModel.findOne({eMail:req.session.company.eMail},req.body,{new:true})
+    console.log(profilecmp)
+    res.render('company/editprofile',{profilecmp})
+}
+
+const docmpEdit=async function(req,res,next){
+let profiletoedit=await companyModel.findOneAndUpdate({eMail:req.session.company.eMail},req.body,{new:true})
+res.redirect('/company/viewprofile')
+}
 
 
-
-module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate,viewcmpProfile,userApplications,userProfile,acceptprofile,rejectprofile,doLogout}
+module.exports={signupPage,doSignup,loginPage,doLogin,homePage,updateProfile,doUpdate,viewcmpProfile,userApplications,userProfile,acceptprofile,rejectprofile,doLogout,editCmpprofile,docmpEdit}

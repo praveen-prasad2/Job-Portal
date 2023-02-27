@@ -1,0 +1,38 @@
+{{!-- <link rel="stylesheet" href="/stylesheets/style.css"> --}}
+
+
+<div class="container">
+  <div class="left">
+   
+    <div class="form">
+      <h2 class="animation a1">edit profile</h2>
+        <form  method="post" action="/company/editprofile">
+      <input type="text" class="form-field animation a3"  name="empName" value="{{profilecmp.empName}}"><br>
+      <input type="email" class="form-field animation a3" placeholder="Email Address" name="eMail" value="{{profilecmp.eMail}}"><br>
+      <input type="number" class="form-field animation a3" placeholder="Phone Number" name="phoneNo" value="{{profilecmp.phoneNo}}"><br>
+<select name="companyType" class="form-select" aria-label="Default select example" >
+  <option selected>Select Company Type</option>
+  <option value="Software">Software</option>
+  <option value="Architecture">Architecture</option>
+  <option value="Finance">Finance</option>
+  <option value="Marketing">Marketing</option>
+</select>
+
+<input type="file" name="companyimage" accept=".jpg" id="companyimage"><br><br>
+
+<textarea name="about" id="companyabout" cols="30" rows="10" spaceholder="About">{{profilecmp.about}}</textarea><br><br>
+
+<textarea name="address" id="address" cols="30" rows="10" spaceholder="Address">{{profilecmp.address}}</textarea><br><br>
+
+<textarea name="mission" id="mission" cols="30" rows="10" spaceholder="mission">{{profilecmp.mission}}</textarea><br><br>
+
+<textarea name="vision" id="vision" cols="30" rows="10" spaceholder="vision">{{profilecmp.vision}}</textarea><br><br>
+
+<button class="save">Save</button>
+
+
+      </form>
+    </div>
+  </div>
+  <div class="right"></div>
+</div>
