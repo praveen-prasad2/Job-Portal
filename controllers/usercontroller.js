@@ -115,7 +115,19 @@ const viewApplications=async function(req,res,next){
   res.render("user/viewapplications",{jobapplication})
 }
 
+const showEditPage=async function(req,res,next){
+  const profileedit=await UserModel.findOne({eMail:req.session.user.eMail},req.body)
+  console.log(profileedit)
+  res.render('user/editprofile',{profileedit})
+}
+
+const doEdit=async function(req,res,next){
+  let profile = await UserModel.findOneAndUpdate({eMail:req.session.user.eMail},req.body,{new:true})
+
+  res.redirect('/home')
+}
 
 
 
-module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn,updateProfile,doUpdate,viewProfile,applyJob,viewApplications,doLogOut }
+
+module.exports = { renderIndex, loginPage, homePage, signupPage, doSignup, doLogIn,updateProfile,doUpdate,viewProfile,applyJob,viewApplications,doLogOut,showEditPage ,doEdit}
