@@ -97,6 +97,20 @@ button {
     box-shadow: none;
   }
 
-  
+  .modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-body a{
+    text-decoration: none;
+    color: #f1f1f1;
+  }
+
+  .modal{
+    border-radius: 30px;
+  }
   
   
