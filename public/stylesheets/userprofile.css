@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com');
+
 .container{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Bakbak One', cursive;
+
 }
 
 
@@ -20,6 +24,8 @@
     box-shadow: 1px 5px 60px 0px #100a886b;
     display:flex;
     flex-direction: column;
+    margin-top: 90px;
+    color: white;
   
    }
    
@@ -74,3 +80,93 @@
    .card button:hover {
     background: #534bf3;
    }
+
+   /* NAVBAR */
+
+   .navbar{
+    width: 100%;
+    z-index: 10  ;
+    position: fixed;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(283, 100%, 13%);
+    padding: 1rem 1.5rem;
+    border-radius: 0.4rem;
+}
+
+a:hover{
+    color: red;
+}
+nav .logo{
+    font-weight: 700;
+    height: 60px;
+    width: 60px;
+    border-radius   : 50%;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav #toggle,
+nav label{
+    display: none;
+}
+@media (max-width:40.625rem){
+    nav .menu{
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+nav ul{
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+nav label{
+    display: inline-flex;
+    color: white;
+    cursor: pointer;
+}
+nav #toggle:checked ~ .menu{
+    height: 100%;
+}
+}
+
+.profile{
+    color: white;
+    font-size: 25px;
+}
+
+
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

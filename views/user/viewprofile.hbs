@@ -1,7 +1,28 @@
 <link rel="stylesheet" href="/stylesheets/userprofile.css">
 
 
+
+<div class="navbar">
+    <nav>
+        <a href="#" class="logo">UNION</a>
+        <input type="checkbox" name="" id="toggle">
+        <label for="toggle"><i class="fa-sharp fa-solid fa-bars">Menu</i></label>
+        <div class="menu">
+            <ul>
+                <li><a href="/home">HOME</a></li>
+                <li><a href="/viewjobs">JOBS</a></li>
+                <li><a href="/viewprofile">PROFILE</a></li>
+                <li><a href="/editprofile">EDIT PROFILE</a></li>
+                <li><a href="/updateprofile">UPDATE PROFILE</a></li>
+                <li><a href="/logout">LOGOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
 <div class="container">
+
+    
 
         <div class="card">
         <div class="card-border-top">
@@ -11,7 +32,7 @@
                 <img class="image" src="/user/{{profile._id}}.jpg" alt="">
             </div>
         <div class="content">
-            <p>{{profile.fullName}}</p>
+            <span>{{profile.fullName}}</span>
             <p>{{profile.eMail}}</p>
             <p>{{profile.phoneNo}}</p>
             <p>{{profile.workStatus}}</p>
@@ -22,7 +43,7 @@
             <p>{{profile.jobCategory}}</p>
             <p>{{profile.languages}}</p>
         </div>
-            <button> Edit
-            </button>
+          <a href="/editprofile">  <button> Edit</button></a>
         </div>
 </div>
+
