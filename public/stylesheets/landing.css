@@ -34,10 +34,12 @@ nav{
 
 
 nav .logo{
+  color: #2ba8fb;
     font-weight: 700;
     height: 60px;
     width: 60px;
     border-radius   : 50%;
+    text-decoration: none;
 }
 nav ul{
     list-style: none;
@@ -112,5 +114,10 @@ button {
   .modal{
     border-radius: 30px;
   }
-  
+  .left{
+    background-color:black;
+    width: 100%;
+    height: 900px;
+    z-index: 98;
+  }
   
